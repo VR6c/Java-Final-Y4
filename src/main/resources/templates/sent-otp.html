@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Code - {{appName}}</title>
+</head>
+
+<body
+    style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; background-color: #FFFFFF; color: #2B2620;">
+
+    <div style="width: 100%; background-color: #FFFFFF; padding: 40px 16px; box-sizing: border-box;">
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" width="100%"
+            style="max-width: 480px; margin: 0 auto;">
+            <tr>
+                <td
+                    style="background-color: #FFFFFF; border: 1px solid #EFE8DF; border-radius: 16px; padding: 40px 32px; box-sizing: border-box;">
+
+                    <!-- Brand Header -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center"
+                        style="margin: 0 auto 28px auto;">
+                        <tr>
+                            <td style="vertical-align: middle; padding-right: 12px;">
+                                <img src="cid:emailLogo" alt="{{appName}}" width="40" height="40"
+                                    style="display: block; border: 0; border-radius: 8px;" />
+                            </td>
+                            <td style="vertical-align: middle; text-align: left;">
+                                <div style="font-size: 14px; font-weight: 700; color: #2B2620; letter-spacing: 0.6px;">
+                                    TVR-OTP
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Heading -->
+                    <p
+                        style="margin: 0 0 6px 0; font-size: 18px; font-weight: 700; color: #2B2620; text-align: center;">
+                        Verify your email
+                    </p>
+
+                    <!-- Subheading -->
+                    <p
+                        style="margin: 0 0 28px 0; font-size: 14px; color: #6B6258; font-weight: 400; line-height: 1.5; text-align: center;">
+                        Enter the code below to confirm it's really you.
+                    </p>
+
+                    <!-- OTP Code Card -->
+                    <div
+                        style="border: 1px solid #EFE8DF; border-radius: 12px; padding: 24px 20px; text-align: center; box-sizing: border-box; background-color: #F3ECE4; ">
+                        <div
+                            style="font-size: 11px; font-weight: 700; color: #8A7A65; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;">
+                            Your verification code
+                        </div>
+                        <div
+                            style="font-size: 38px; font-weight: 800; color: #2B2620; letter-spacing: 12px; margin-right: -12px; font-family: 'Segoe UI', Roboto, monospace; line-height: 1.1;">
+                            {{otp}}
+                        </div>
+                    </div>
+
+                    <!-- Expiration Notice -->
+                    <p
+                        style="margin: 20px 0 0 0; font-size: 13px; color: #6B6258; text-align: center; line-height: 1.5;">
+                        This code expires in <strong style="color: #2B2620; font-weight: 700;">{{expirationMinutes}}
+                            minutes</strong>.
+                        Do not share it with anyone.
+                    </p>
+
+                    <!-- Ignore Notice -->
+                    <p
+                        style="margin: 12px 0 0 0; font-size: 12.5px; color: #9C9184; text-align: center; line-height: 1.5;">
+                        If you didn't request this, you can safely ignore this email.
+                    </p>
+
+                    <!-- Divider -->
+                    <hr style="border: 0; border-top: 1px solid #EFE8DF; margin: 28px 0;" />
+
+                    <!-- Footer -->
+                    <p style="margin: 0; font-size: 11px; color: #B4AA9C; text-align: center; line-height: 1.5;">
+                        &copy; {{currentYear}} TVR-OTP. All rights reserved.
+                    </p>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
