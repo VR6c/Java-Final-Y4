@@ -23,6 +23,8 @@ public final class AppConstants {
     public static final String SUCCESS_TOKEN_REFRESH = "Token refreshed successfully";
     public static final String SUCCESS_LOGOUT = "User logged out successfully";
     public static final String SUCCESS_OTP_SENT = "OTP sent successfully";
+    public static final String SUCCESS_REGISTRATION_OTP_SENT = "Registration initiated. Verification OTP has been sent to your email";
+    public static final String SUCCESS_OTP_VERIFIED = "OTP verified successfully";
 
     // Error Messages
     public static final String ERROR_NOT_FOUND = "Resource not found";
