@@ -45,73 +45,7 @@ public class CacheConfig {
                 .expireAfterWrite(10, TimeUnit.MINUTES)
                 .recordStats()
                 .removalListener(createRemovalListener("default")));
-
-        // 2. Programmatic custom configuration for specific caches (Advanced rules)
-
-        // Products: High-read catalog; expires after write (10m) or access (5m idle)
-        cacheManager.registerCustomCache(CACHE_PRODUCTS, Caffeine.newBuilder()
-                .initialCapacity(100)
-                .maximumSize(2000)
-                .expireAfterWrite(10, TimeUnit.MINUTES)
-                .expireAfterAccess(5, TimeUnit.MINUTES)
-                .recordStats()
-                .removalListener(createRemovalListener(CACHE_PRODUCTS))
-                .build());
-
-        // Students: Frequently queried operational data
-        cacheManager.registerCustomCache(CACHE_STUDENTS, Caffeine.newBuilder()
-                .initialCapacity(100)
-                .maximumSize(2000)
-                .expireAfterWrite(15, TimeUnit.MINUTES)
-                .recordStats()
-                .removalListener(createRemovalListener(CACHE_STUDENTS))
-                .build());
-
-        // Customers: Operational data
-        cacheManager.registerCustomCache(CACHE_CUSTOMERS, Caffeine.newBuilder()
-                .initialCapacity(50)
-                .maximumSize(1000)
-                .expireAfterWrite(15, TimeUnit.MINUTES)
-                .recordStats()
-                .removalListener(createRemovalListener(CACHE_CUSTOMERS))
-                .build());
-
-        // Orders: Transactional data with shorter write expiry
-        cacheManager.registerCustomCache(CACHE_ORDERS, Caffeine.newBuilder()
-                .initialCapacity(50)
-                .maximumSize(500)
-                .expireAfterWrite(5, TimeUnit.MINUTES)
-                .recordStats()
-                .removalListener(createRemovalListener(CACHE_ORDERS))
-                .build());
-
-        // Majors: Academic reference data, rarely changed (Long TTL: 60m)
-        cacheManager.registerCustomCache(CACHE_MAJORS, Caffeine.newBuilder()
-                .initialCapacity(20)
-                .maximumSize(200)
-                .expireAfterWrite(60, TimeUnit.MINUTES)
-                .recordStats()
-                .removalListener(createRemovalListener(CACHE_MAJORS))
-                .build());
-
-        // Subjects: Academic course catalog, rarely changed (Long TTL: 60m)
-        cacheManager.registerCustomCache(CACHE_SUBJECTS, Caffeine.newBuilder()
-                .initialCapacity(50)
-                .maximumSize(500)
-                .expireAfterWrite(60, TimeUnit.MINUTES)
-                .recordStats()
-                .removalListener(createRemovalListener(CACHE_SUBJECTS))
-                .build());
-
-        // Teachers: Faculty directory (TTL: 30m)
-        cacheManager.registerCustomCache(CACHE_TEACHERS, Caffeine.newBuilder()
-                .initialCapacity(50)
-                .maximumSize(500)
-                .expireAfterWrite(30, TimeUnit.MINUTES)
-                .recordStats()
-                .removalListener(createRemovalListener(CACHE_TEACHERS))
-                .build());
-
+                
         // User Details: Queried on EVERY authenticated request via JwtAuthenticationFilter
         cacheManager.registerCustomCache(CACHE_USER_DETAILS, Caffeine.newBuilder()
                 .initialCapacity(100)
