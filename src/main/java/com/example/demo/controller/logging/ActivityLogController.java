@@ -7,6 +7,7 @@ import com.example.demo.dto.response.logging.ActivityLogResponse;
 import com.example.demo.service.logging.ActivityLogService;
 import com.example.demo.util.PaginationUtils;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/activities")
 @RequiredArgsConstructor
 @Validated
+@Hidden
 @Tag(name = "Activity Logs", description = "Endpoints for viewing user and system activity audit logs")
 public class ActivityLogController {
 
