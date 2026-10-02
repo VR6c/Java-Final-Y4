@@ -75,7 +75,7 @@ public class AuthService {
             throw new IllegalArgumentException("Email is already registered: " + normalizedEmail);
         }
 
-        Role userRole = request.getRole() != null ? request.getRole() : Role.ROLE_USER;
+        Role userRole = Role.ROLE_USER;
         String encodedPassword = passwordEncoder.encode(request.getPassword());
         String otp = generateOtpCode();
 
